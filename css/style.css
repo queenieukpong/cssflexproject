@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E3F2FD; 
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: #0D47A1; 
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* NAVIGATION */
+#nav {
+    height: 80px;
+    width: 100%;
+    background-color: #0D47A1; /* Deep blue */
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    border-radius: 5px;
+}
+
+.nav-menu li:hover {
+    color: #E3F2FD;
+    background-color: #1976D2;
+    transform: translateY(-3px);
+}
+
+/* HERO SECTION */
+#hero {
+    background-color: #1565C0;
+    color: #FFF;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#hero .container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; /* spacing between the txt and image */
+}
+
+#hero .container .hero-content {
+    flex: 1;
+    text-align: left; /* making the text is left-aligned */
+}
+
+.hero-content h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 500px; /* making sure the text isn't stretching too wide */
+}
+
+
+.hero-image img {
+    width: 100%;
+    max-width: 350px;
+}
+
+/* BOXES */
+.boxes .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.box {
+    flex: 1;
+    background-color: #0a51cc;
+    color: #fff;
+    border-radius: 12px;
+    margin: 15px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+}
+
+.box h2 {
+    font-size: 20px;
+    font-weight: 600;
+    display: flex; /* makes the icon and text to stay in one line */
+    align-items: center;
+    gap: 10px; /* Adds spacing between icon and text */
+}
+
+.box i {
+    font-size: 22px;
+    color: #E3F2FD;
+}
+
+.box p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
+
+/* including some hover effect */
+/* .box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    background-color: #1976D2;
+} */
+
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    #nav .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-menu {
+        margin-top: 10px;
+    }
+
+    .nav-menu li {
+        margin: 5px 10px;
+    }
+
+    .boxes .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* For Responsiveness */
+
+/* Make the Navigation Menu Stack on Small Screens */
+@media screen and (max-width: 768px) {
+    #nav .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 5px; /* Reduce space between menu items */
+    }
+
+    .menu ul li {
+        font-size: 16px;
+        padding: 5px;
+    }
+}
+
+/* This section makes the hero section stack vertically */
+@media screen and (max-width: 768px) {
+    #hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 2; /* This moves text below image */
+        text-align: center;
+    }
+
+    .hero-image {
+        order: 1;
+    }
+
+    .hero-image img {
+        max-width: 80%; /* This prevents image from being too big */
+    }
+}
+
+/* Make the Boxes Stack on Small Screens */
+@media screen and (max-width: 768px) {
+    .boxes .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 90%; /* Here, Boxes take full width */
+        margin: 10px 0;
+    }
+}
+
+/* Adjust Font Sizes for Mobile */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
